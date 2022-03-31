@@ -25,14 +25,14 @@
   "rules": {
     "quotes": [
       "error",
-      "double",
+      "single",
       {
         "avoidEscape": true
       }
     ],
     "@typescript-eslint/quotes": [
       "error",
-      "double",
+      "single",
       {
         "avoidEscape": true
       }

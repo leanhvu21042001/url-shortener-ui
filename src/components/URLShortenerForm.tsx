@@ -26,7 +26,6 @@ export default function URLShortenerForm() {
       });
 
       if (String(result.status) === '200') {
-        console.log(result);
         setShortUrl(`${config.SERVER_ENDPOINT}/${result.data.shortId}`);
       }
     } catch (error) {

@@ -1,4 +1,5 @@
 import { Container } from '@chakra-ui/react';
+import Background from './components/Background';
 import URLShortenerForm from './components/URLShortenerForm';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="app">
       <Container width="100vw" height="100vh">
         <URLShortenerForm />
+        <Background />
       </Container>
     </div>
   );

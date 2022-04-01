@@ -10,11 +10,11 @@ new ClipboardJS('.button');
 
 export default function URLShortenerForm() {
   const [destination, setDestination] = useState<string>('');
-  const [shortUrl, setShortUrl] = useState<string>('');
+  const [urlWithShortId, setUrlWithShortId] = useState<string>('');
 
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     setDestination(event.currentTarget.value);
-    setShortUrl('');
+    setUrlWithShortId('');
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -26,7 +26,9 @@ export default function URLShortenerForm() {
       });
 
       if (String(result.status) === '200') {
-        setShortUrl(`${config.SERVER_ENDPOINT}/${result.data.shortId}`);
+        const locateOrigin = window.location.origin;
+
+        setUrlWithShortId(`${locateOrigin}/${result.data?.shortId}`);
       }
     } catch (error) {
       toast.error((error as Error).message);
@@ -58,7 +60,7 @@ export default function URLShortenerForm() {
               <Input type="text" readOnly value={destination} border="none" />
             </Box>
           )}
-          {shortUrl && (
+          {urlWithShortId && (
             <Box
               display="flex"
               flexDirection="row"
@@ -70,7 +72,7 @@ export default function URLShortenerForm() {
                 id="input"
                 type="text"
                 readOnly
-                defaultValue={shortUrl}
+                defaultValue={urlWithShortId}
                 border="none"
               />
               <Button

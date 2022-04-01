@@ -42,6 +42,8 @@
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": "off",
     "react/button-has-type": "off",
-    "no-new": "off"
+    "no-new": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-useless-escape": "off"
   }
 }

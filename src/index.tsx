@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { ToastContainer } from 'react-toastify';
+import { ChakraProvider } from '@chakra-ui/react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider>
+      <ToastContainer />
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

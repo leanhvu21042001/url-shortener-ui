@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="app">
       <Container width="100vw" height="100vh">
-        <URLShortenerForm />
         <Background />
+        <URLShortenerForm />
       </Container>
     </div>
   );

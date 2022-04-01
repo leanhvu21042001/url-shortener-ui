@@ -7,12 +7,13 @@ function Background() {
 
   return (
     <Image
-      position="fixed"
+      position="absolute"
       top="0"
       left="0"
-      bottom="0"
       right="0"
-      zIndex="-1"
+      bottom="0"
+      width={width}
+      height={height}
       src={image}
       alt="bg"
     />
